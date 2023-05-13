@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import "demo.dart";
 import 'hello_flutter.dart';
 import "sample_message.dart";
+import "floating_action_button_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -59,6 +60,13 @@ class _MenuPageState extends State<MenuPage> {
                     onPressed: onClickSampleMessage,
                     child: const Text("SampleMessage")),
               ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: ElevatedButton(
+                    key: null,
+                    onPressed: onClickFloatingActionButtonSample,
+                    child: const Text("FloatingActionButtonSample")),
+              ),
             ])));
   }
 
@@ -80,6 +88,14 @@ class _MenuPageState extends State<MenuPage> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const SampleMessage()),
+    );
+  }
+
+  void onClickFloatingActionButtonSample() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => const FloatingActionButtonSample()),
     );
   }
 }

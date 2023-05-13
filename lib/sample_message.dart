@@ -6,7 +6,7 @@ void main() {
 
 class SampleMessage extends StatelessWidget {
   const SampleMessage({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return const SampleMessagePage(title: "xxx", message: "hello");
