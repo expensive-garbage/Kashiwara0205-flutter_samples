@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "demo.dart";
 import 'hello_flutter.dart';
+import "sample_message.dart";
 
 void main() => runApp(const Menu());
 
@@ -51,6 +52,13 @@ class _MenuPageState extends State<MenuPage> {
                     onPressed: onClickHelloFlutter,
                     child: const Text("Hello flutter")),
               ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: ElevatedButton(
+                    key: null,
+                    onPressed: onClickSampleMessage,
+                    child: const Text("SampleMessage")),
+              ),
             ])));
   }
 
@@ -65,6 +73,13 @@ class _MenuPageState extends State<MenuPage> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const HelloFlutter()),
+    );
+  }
+
+  void onClickSampleMessage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const SampleMessage()),
     );
   }
 }

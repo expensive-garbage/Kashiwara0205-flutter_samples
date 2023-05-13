@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_samples/hello_flutter.dart';
 import 'demo.dart';
 import 'menu.dart';
+import 'sample_message.dart';
 
 void main() => runApp(const Main());
 
@@ -15,6 +16,7 @@ class Main extends StatelessWidget {
         '/': (context) => const Menu(),
         'demo': (context) => const Demo(),
         'hello_flutter': (context) => const HelloFlutter(),
+        'sample_message': (context) => const SampleMessage(),
       },
     );
   }
