@@ -47,7 +47,7 @@ class _MenuPageState extends State<MenuPage> {
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
-                    onPressed: onClickDemo,
+                    onPressed: onClickNextPage(const Demo()),
                     child: const Text("DEMO PAGE")),
               ),
               Padding(
@@ -56,7 +56,7 @@ class _MenuPageState extends State<MenuPage> {
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
-                    onPressed: onClickHelloFlutter,
+                    onPressed: onClickNextPage(const HelloFlutter()),
                     child: const Text("Hello flutter")),
               ),
               Padding(
@@ -65,7 +65,7 @@ class _MenuPageState extends State<MenuPage> {
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
-                    onPressed: onClickSampleMessage,
+                    onPressed: onClickNextPage(const SampleMessage()),
                     child: const Text("SampleMessage")),
               ),
               Padding(
@@ -74,7 +74,8 @@ class _MenuPageState extends State<MenuPage> {
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
-                    onPressed: onClickFloatingActionButtonSample,
+                    onPressed:
+                        onClickNextPage(const FloatingActionButtonSample()),
                     child: const Text("FloatingButtonSample")),
               ),
               Padding(
@@ -83,7 +84,7 @@ class _MenuPageState extends State<MenuPage> {
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
-                    onPressed: onClickDataSample,
+                    onPressed: onClickNextPage(const DataSample()),
                     child: const Text("DataSample")),
               ),
               Padding(
@@ -92,52 +93,18 @@ class _MenuPageState extends State<MenuPage> {
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
-                    onPressed: onClickBaseLayout,
+                    onPressed: onClickNextPage(const BaseLayout()),
                     child: const Text("LayoutSample")),
               ),
             ])));
   }
 
-  void onClickBaseLayout() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const BaseLayout()),
-    );
-  }
-
-  void onClickDemo() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Demo()),
-    );
-  }
-
-  void onClickHelloFlutter() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const HelloFlutter()),
-    );
-  }
-
-  void onClickSampleMessage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const SampleMessage()),
-    );
-  }
-
-  void onClickFloatingActionButtonSample() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => const FloatingActionButtonSample()),
-    );
-  }
-
-  void onClickDataSample() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const DataSample()),
-    );
+  void Function() onClickNextPage(page) {
+    return () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => page),
+      );
+    };
   }
 }
