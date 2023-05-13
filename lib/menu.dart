@@ -28,12 +28,12 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
+  static const double _buttonWidth = 200;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Here we take the value from the MenuPage object that was created by
-          // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
         body: Container(
@@ -44,6 +44,8 @@ class _MenuPageState extends State<MenuPage> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
                     onPressed: onClickDemo,
                     child: const Text("DEMO PAGE")),
@@ -51,6 +53,8 @@ class _MenuPageState extends State<MenuPage> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
                     onPressed: onClickHelloFlutter,
                     child: const Text("Hello flutter")),
@@ -58,6 +62,8 @@ class _MenuPageState extends State<MenuPage> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
                     onPressed: onClickSampleMessage,
                     child: const Text("SampleMessage")),
@@ -65,6 +71,8 @@ class _MenuPageState extends State<MenuPage> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
                     onPressed: onClickFloatingActionButtonSample,
                     child: const Text("FloatingButtonSample")),
@@ -72,6 +80,8 @@ class _MenuPageState extends State<MenuPage> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
                     onPressed: onClickDataSample,
                     child: const Text("DataSample")),
@@ -79,6 +89,8 @@ class _MenuPageState extends State<MenuPage> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size.fromWidth(_buttonWidth)),
                     key: null,
                     onPressed: onClickBaseLayout,
                     child: const Text("LayoutSample")),
