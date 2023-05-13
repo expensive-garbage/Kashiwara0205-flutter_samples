@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "demo.dart";
+import 'hello_flutter.dart';
 
 void main() => runApp(const Menu());
 
@@ -35,19 +36,46 @@ class _MenuPageState extends State<MenuPage> {
         padding: const EdgeInsets.all(0.0),
         alignment: Alignment.center,
         child: 
-          ElevatedButton(
-            key:null, 
-            onPressed:buttonPressed,
-            child: const Text("DEMO PAGE")
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding:
+                const EdgeInsets.all(5.0), 
+                child:
+                  ElevatedButton(
+                    key:null, 
+                    onPressed:onClickDemo,
+                    child: const Text("DEMO PAGE")
+                  ),
+              ),
+              Padding(
+                padding:
+                const EdgeInsets.all(5.0), 
+                child:
+                  ElevatedButton(
+                    key:null, 
+                    onPressed:onClickHelloFlutter,
+                    child: const Text("Hello flutter")
+                  ),
+              ),
+            ]
           )
         )
       );
   }
 
-  void buttonPressed(){
+  void onClickDemo(){
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const Demo()),
+    );
+  }
+
+  void onClickHelloFlutter(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HelloFlutter()),
     );
   }
 }

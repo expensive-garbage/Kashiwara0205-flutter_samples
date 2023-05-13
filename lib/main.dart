@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_samples/hello_flutter.dart';
 import 'demo.dart';
 import 'menu.dart';
 
@@ -13,6 +14,7 @@ class Main extends StatelessWidget {
       routes: {
         '/': (context) => const Menu(),
         'demo': (context) => const Demo(),
+        'hello_flutter': (context) => const HelloFlutter(),
       },
     );
   } 
