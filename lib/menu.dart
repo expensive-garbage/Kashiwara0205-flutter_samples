@@ -27,52 +27,41 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MenuPage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(0.0),
-        alignment: Alignment.center,
-        child: 
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+        appBar: AppBar(
+          // Here we take the value from the MenuPage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(widget.title),
+        ),
+        body: Container(
+            padding: const EdgeInsets.all(0.0),
+            alignment: Alignment.center,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Padding(
-                padding:
-                const EdgeInsets.all(5.0), 
-                child:
-                  ElevatedButton(
-                    key:null, 
-                    onPressed:onClickDemo,
-                    child: const Text("DEMO PAGE")
-                  ),
+                padding: const EdgeInsets.all(5.0),
+                child: ElevatedButton(
+                    key: null,
+                    onPressed: onClickDemo,
+                    child: const Text("DEMO PAGE")),
               ),
               Padding(
-                padding:
-                const EdgeInsets.all(5.0), 
-                child:
-                  ElevatedButton(
-                    key:null, 
-                    onPressed:onClickHelloFlutter,
-                    child: const Text("Hello flutter")
-                  ),
+                padding: const EdgeInsets.all(5.0),
+                child: ElevatedButton(
+                    key: null,
+                    onPressed: onClickHelloFlutter,
+                    child: const Text("Hello flutter")),
               ),
-            ]
-          )
-        )
-      );
+            ])));
   }
 
-  void onClickDemo(){
+  void onClickDemo() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const Demo()),
     );
   }
 
-  void onClickHelloFlutter(){
+  void onClickHelloFlutter() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const HelloFlutter()),

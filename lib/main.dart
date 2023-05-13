@@ -17,5 +17,5 @@ class Main extends StatelessWidget {
         'hello_flutter': (context) => const HelloFlutter(),
       },
     );
-  } 
+  }
 }
