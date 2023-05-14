@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import "package:flutter_samples/column_layout.dart";
 import "package:flutter_samples/container_layout.dart";
+import "package:flutter_samples/row_layout.dart";
 import "demo.dart";
 import 'hello_flutter.dart';
 import "sample_message.dart";
@@ -43,80 +45,30 @@ class _MenuPageState extends State<MenuPage> {
             alignment: Alignment.center,
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: const Size.fromWidth(_buttonWidth)),
-                    key: null,
-                    onPressed: onClickNextPage(const Demo()),
-                    child: const Text("DEMO PAGE")),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: const Size.fromWidth(_buttonWidth)),
-                    key: null,
-                    onPressed: onClickNextPage(const HelloFlutter()),
-                    child: const Text("Hello flutter")),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: const Size.fromWidth(_buttonWidth)),
-                    key: null,
-                    onPressed: onClickNextPage(const SampleMessage()),
-                    child: const Text("SampleMessage")),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: const Size.fromWidth(_buttonWidth)),
-                    key: null,
-                    onPressed:
-                        onClickNextPage(const FloatingActionButtonSample()),
-                    child: const Text("FloatingButtonSample")),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: const Size.fromWidth(_buttonWidth)),
-                    key: null,
-                    onPressed: onClickNextPage(const DataSample()),
-                    child: const Text("DataSample")),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: const Size.fromWidth(_buttonWidth)),
-                    key: null,
-                    onPressed: onClickNextPage(const BaseLayout()),
-                    child: const Text("LayoutSample")),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: const Size.fromWidth(_buttonWidth)),
-                    key: null,
-                    onPressed: onClickNextPage(const CenterLayout()),
-                    child: const Text("CenterLayout")),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        fixedSize: const Size.fromWidth(_buttonWidth)),
-                    key: null,
-                    onPressed: onClickNextPage(const ContainerLayout()),
-                    child: const Text("ContainerSample")),
-              ),
+              createMenuButton(const Demo(), "Demo"),
+              createMenuButton(const HelloFlutter(), "HelloFlutter"),
+              createMenuButton(const SampleMessage(), "SampleMessage"),
+              createMenuButton(
+                  const FloatingActionButtonSample(), "FloatingSample"),
+              createMenuButton(const DataSample(), "DataSample"),
+              createMenuButton(const BaseLayout(), "baseLayout"),
+              createMenuButton(const CenterLayout(), "centerLayout"),
+              createMenuButton(const ContainerLayout(), "containerLayout"),
+              createMenuButton(const ColumnLayout(), "columnLayout"),
+              createMenuButton(const RowLayout(), "rowLayout")
             ])));
+  }
+
+  createMenuButton(page, String buttonName) {
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              fixedSize: const Size.fromWidth(_buttonWidth)),
+          key: null,
+          onPressed: onClickNextPage(page),
+          child: Text(buttonName)),
+    );
   }
 
   void Function() onClickNextPage(page) {
