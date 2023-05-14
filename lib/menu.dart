@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "package:flutter_samples/container_layout.dart";
 import "demo.dart";
 import 'hello_flutter.dart';
 import "sample_message.dart";
@@ -105,6 +106,15 @@ class _MenuPageState extends State<MenuPage> {
                     key: null,
                     onPressed: onClickNextPage(const CenterLayout()),
                     child: const Text("CenterLayout")),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size.fromWidth(_buttonWidth)),
+                    key: null,
+                    onPressed: onClickNextPage(const ContainerLayout()),
+                    child: const Text("ContainerSample")),
               ),
             ])));
   }
