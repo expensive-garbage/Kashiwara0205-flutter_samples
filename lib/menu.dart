@@ -6,6 +6,7 @@ import "package:flutter_samples/icon_button_sample.dart";
 import "package:flutter_samples/raw_material_button.dart";
 import "package:flutter_samples/row_layout.dart";
 import "package:flutter_samples/text_button_sample.dart";
+import "package:flutter_samples/text_field_sample.dart";
 import "demo.dart";
 import 'hello_flutter.dart';
 import "sample_message.dart";
@@ -47,26 +48,31 @@ class _MenuPageState extends State<MenuPage> {
         body: Container(
             padding: const EdgeInsets.all(0.0),
             alignment: Alignment.center,
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              createMenuButton(const Demo(), "Demo"),
-              createMenuButton(const HelloFlutter(), "HelloFlutter"),
-              createMenuButton(const SampleMessage(), "SampleMessage"),
-              createMenuButton(const FloatingActionButtonSample(),
-                  "FloatingActionButtonSample"),
-              createMenuButton(const DataSample(), "DataSample"),
-              createMenuButton(const BaseLayout(), "BaseLayout"),
-              createMenuButton(const CenterLayout(), "CenterLayout"),
-              createMenuButton(const ContainerLayout(), "ContainerLayout"),
-              createMenuButton(const ColumnLayout(), "ColumnLayout"),
-              createMenuButton(const RowLayout(), "RowLayout"),
-              createMenuButton(const TextButtonSample(), "TextButtonSample"),
-              createMenuButton(
-                  const ElevatedButtonSample(), "ElevatedButtonSample"),
-              createMenuButton(const IconButtonSample(), "IconButtonSample"),
-              createMenuButton(
-                  const RawMaterialButtonSample(), "RawMaterialButton"),
-            ])));
+            child: SingleChildScrollView(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                  createMenuButton(const Demo(), "Demo"),
+                  createMenuButton(const HelloFlutter(), "HelloFlutter"),
+                  createMenuButton(const SampleMessage(), "SampleMessage"),
+                  createMenuButton(const FloatingActionButtonSample(),
+                      "FloatingActionButtonSample"),
+                  createMenuButton(const DataSample(), "DataSample"),
+                  createMenuButton(const BaseLayout(), "BaseLayout"),
+                  createMenuButton(const CenterLayout(), "CenterLayout"),
+                  createMenuButton(const ContainerLayout(), "ContainerLayout"),
+                  createMenuButton(const ColumnLayout(), "ColumnLayout"),
+                  createMenuButton(const RowLayout(), "RowLayout"),
+                  createMenuButton(
+                      const TextButtonSample(), "TextButtonSample"),
+                  createMenuButton(
+                      const ElevatedButtonSample(), "ElevatedButtonSample"),
+                  createMenuButton(
+                      const IconButtonSample(), "IconButtonSample"),
+                  createMenuButton(const RawMaterialButtonSample(),
+                      "RawMaterialButtonSample"),
+                  createMenuButton(const TextFieldSample(), "TextFieldSample"),
+                ]))));
   }
 
   createMenuButton(page, String buttonName) {
