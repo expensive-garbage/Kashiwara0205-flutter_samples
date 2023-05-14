@@ -3,6 +3,7 @@ import "package:flutter_samples/column_layout.dart";
 import "package:flutter_samples/container_layout.dart";
 import "package:flutter_samples/elevated_button_sample.dart";
 import "package:flutter_samples/icon_button_sample.dart";
+import "package:flutter_samples/on_changed_sample.dart";
 import "package:flutter_samples/raw_material_button.dart";
 import "package:flutter_samples/row_layout.dart";
 import "package:flutter_samples/text_button_sample.dart";
@@ -72,6 +73,7 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(const RawMaterialButtonSample(),
                       "RawMaterialButtonSample"),
                   createMenuButton(const TextFieldSample(), "TextFieldSample"),
+                  createMenuButton(const OnChangedSample(), "OnChangedSample"),
                 ]))));
   }
 
