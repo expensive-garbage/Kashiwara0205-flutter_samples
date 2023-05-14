@@ -9,8 +9,7 @@ class RowLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const RowLayoutPage(
-        title: "base_layout", message: "HelloFlutter!");
+    return const RowLayoutPage(title: "base_layout", message: "HelloFlutter!");
   }
 }
 
@@ -18,8 +17,7 @@ class RowLayoutPage extends StatefulWidget {
   final String title;
   final String message;
 
-  const RowLayoutPage(
-      {super.key, required this.title, required this.message});
+  const RowLayoutPage({super.key, required this.title, required this.message});
 
   @override
   State<RowLayoutPage> createState() => _RowLayoutPageState();
