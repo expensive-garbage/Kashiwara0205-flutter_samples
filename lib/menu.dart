@@ -5,6 +5,7 @@ import "sample_message.dart";
 import "floating_action_button_sample.dart";
 import "data_sample.dart";
 import "base_layout.dart";
+import "center_layout.dart";
 
 void main() => runApp(const Menu());
 
@@ -95,6 +96,15 @@ class _MenuPageState extends State<MenuPage> {
                     key: null,
                     onPressed: onClickNextPage(const BaseLayout()),
                     child: const Text("LayoutSample")),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size.fromWidth(_buttonWidth)),
+                    key: null,
+                    onPressed: onClickNextPage(const CenterLayout()),
+                    child: const Text("CenterLayout")),
               ),
             ])));
   }
