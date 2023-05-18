@@ -16,6 +16,7 @@ import "data_sample.dart";
 import "base_layout.dart";
 import "center_layout.dart";
 import "checkbox_sample.dart";
+import "switch_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -76,6 +77,7 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(const TextFieldSample(), "TextFieldSample"),
                   createMenuButton(const OnChangedSample(), "OnChangedSample"),
                   createMenuButton(const CheckboxSample(), "CheckboxSample"),
+                  createMenuButton(const SwitchSample(), "SwitchSample"),
                 ]))));
   }
 
