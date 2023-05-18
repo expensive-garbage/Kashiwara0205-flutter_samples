@@ -15,6 +15,7 @@ import "floating_action_button_sample.dart";
 import "data_sample.dart";
 import "base_layout.dart";
 import "center_layout.dart";
+import "checkbox_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -74,6 +75,7 @@ class _MenuPageState extends State<MenuPage> {
                       "RawMaterialButtonSample"),
                   createMenuButton(const TextFieldSample(), "TextFieldSample"),
                   createMenuButton(const OnChangedSample(), "OnChangedSample"),
+                  createMenuButton(const CheckboxSample(), "CheckboxSample"),
                 ]))));
   }
 
