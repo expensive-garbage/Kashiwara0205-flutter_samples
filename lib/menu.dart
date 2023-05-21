@@ -20,6 +20,7 @@ import "switch_sample.dart";
 import 'radio_btn_sample.dart';
 import "dropdown_btn_sample.dart";
 import "popup_menu_button.dart";
+import "slider_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -84,8 +85,10 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(const RadioBtnSample(), "RadioBtnSample"),
                   createMenuButton(
                       const PopupMenuButtonSample(), "PopupMenuButtonSample"),
+                  createMenuButton(const RadioBtnSample(), "RadioBtnSample"),
                   createMenuButton(
                       const DropdownBtnSample(), "DropdownBtnSample"),
+                  createMenuButton(const SliderSample(), "SliderSample"),
                 ]))));
   }
 
