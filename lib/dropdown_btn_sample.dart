@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const RadioBtnSample());
+  runApp(const DropdownBtnSample());
 }
 
-class RadioBtnSample extends StatelessWidget {
-  const RadioBtnSample({super.key});
+class DropdownBtnSample extends StatelessWidget {
+  const DropdownBtnSample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const RadioBtnSamplePage();
+    return const DropdownBtnSamplePage();
   }
 }
 
-class RadioBtnSamplePage extends StatefulWidget {
-  const RadioBtnSamplePage({super.key});
+class DropdownBtnSamplePage extends StatefulWidget {
+  const DropdownBtnSamplePage({super.key});
 
   @override
-  State<RadioBtnSamplePage> createState() => _RadioBtnSamplePageState();
+  State<DropdownBtnSamplePage> createState() => _DropdownBtnSamplePageState();
 }
 
-class _RadioBtnSamplePageState extends State<RadioBtnSamplePage> {
-  static var _message = "select: A";
-  static var _selected = "A";
+class _DropdownBtnSamplePageState extends State<DropdownBtnSamplePage> {
+  static var _message = "select: one";
+  static var _selected = "one";
 
   static final _controller = TextEditingController();
 
@@ -30,7 +30,7 @@ class _RadioBtnSamplePageState extends State<RadioBtnSamplePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("radio btn example"),
+          title: const Text("dropdown btn example"),
         ),
         body: Column(
           children: [
@@ -48,22 +48,10 @@ class _RadioBtnSamplePageState extends State<RadioBtnSamplePage> {
                       fontWeight: FontWeight.w400,
                       fontFamily: "Roboto"),
                 )),
-            const Text(
-              "radio A",
-            ),
-            Radio<String>(
-              value: 'A',
-              groupValue: _selected,
-              onChanged: checkChanged,
-            ),
-            const Text(
-              "radio B",
-            ),
-            Radio<String>(
-              value: 'B',
-              groupValue: _selected,
-              onChanged: checkChanged,
-            )
+            DropdownButton(items: const [
+              DropdownMenuItem(value: 'one', child: Text("one")),
+              DropdownMenuItem(value: 'two', child: Text("two")),
+            ], onChanged: checkChanged, value: _selected)
           ],
         ));
   }
