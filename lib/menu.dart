@@ -24,6 +24,7 @@ import "slider_sample.dart";
 import "dialog_sample.dart";
 import "alert_btn_sample.dart";
 import "simple_dialog_sample.dart";
+import "customize_app_bar.dart";
 
 void main() => runApp(const Menu());
 
@@ -95,6 +96,7 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(const DialogSample(), "DialogSample"),
                   createMenuButton(
                       const SimpleDialogSample(), "SimpleDialogSample"),
+                  createMenuButton(const CustomizeAppBar(), "CustomizeAppBar"),
                   createMenuButton(
                       const AlertDialogSample(), "AlertDialogSample"),
                 ]))));
