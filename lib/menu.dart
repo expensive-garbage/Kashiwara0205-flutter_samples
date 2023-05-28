@@ -28,6 +28,7 @@ import "customize_app_bar.dart";
 import "bottom_navigation_bar.dart";
 import "list_view_sample.dart";
 import "listt_itle_sample.dart";
+import "single_child_scroll_view_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -51,7 +52,7 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-  static const double _buttonWidth = 200;
+  static const double _buttonWidth = 500;
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,8 @@ class _MenuPageState extends State<MenuPage> {
             alignment: Alignment.center,
             child: SingleChildScrollView(
                 child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                   createMenuButton(const Demo(), "Demo"),
                   createMenuButton(const HelloFlutter(), "HelloFlutter"),
@@ -97,11 +99,13 @@ class _MenuPageState extends State<MenuPage> {
                       const DropdownBtnSample(), "DropdownBtnSample"),
                   createMenuButton(const SliderSample(), "SliderSample"),
                   createMenuButton(const DialogSample(), "DialogSample"),
+                  createMenuButton(const SingleChildScrollViewSample(),
+                      "SingleChildScrollViewSample"),
                   createMenuButton(const ListTitleSample(), "ListTitleSample"),
                   createMenuButton(
                       const SimpleDialogSample(), "SimpleDialogSample"),
                   createMenuButton(const CustomizeAppBar(), "CustomizeAppBar"),
-                                createMenuButton(const ListViewSample(), "ListViewSample"), 
+                  createMenuButton(const ListViewSample(), "ListViewSample"),
                   createMenuButton(
                       const BottomuNavigationBar(), "BottomuNavigationBar"),
                   createMenuButton(
@@ -111,13 +115,13 @@ class _MenuPageState extends State<MenuPage> {
 
   createMenuButton(page, String buttonName) {
     return Padding(
-      padding: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(10.0),
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
               fixedSize: const Size.fromWidth(_buttonWidth)),
           key: null,
           onPressed: onClickNextPage(page),
-          child: Text(buttonName)),
+          child: Text(buttonName, style: const TextStyle(fontSize: 28))),
     );
   }
 

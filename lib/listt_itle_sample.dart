@@ -42,57 +42,41 @@ class _ListTitleSamplePageState extends State<ListTitleSamplePage> {
           padding: const EdgeInsets.all(20),
           children: [
             ListTile(
-              leading: const Icon(Icons.android, size:32),
-              title:  const Text('first item', style: TextStyle(fontSize: 28)),
+              leading: const Icon(Icons.android, size: 32),
+              title: const Text('first item', style: TextStyle(fontSize: 28)),
               selected: _index == 1,
-              onTap: (){
+              onTap: () {
                 _index = 1;
                 tapTitle();
               },
             ),
-            
-ListTile(
-              leading: const Icon(Icons.android, size:32),
-              title:  const Text('sconed item', style: TextStyle(fontSize: 28)),
+            ListTile(
+              leading: const Icon(Icons.android, size: 32),
+              title: const Text('sconed item', style: TextStyle(fontSize: 28)),
               selected: _index == 2,
-              onTap: (){
+              onTap: () {
                 _index = 2;
                 tapTitle();
               },
-
-
-
-
-              
             ),
-
-
-ListTile(
-              leading: const Icon(Icons.android, size:32),
-              title:  const Text('third item', style: TextStyle(fontSize: 28)),
+            ListTile(
+              leading: const Icon(Icons.android, size: 32),
+              title: const Text('third item', style: TextStyle(fontSize: 28)),
               selected: _index == 3,
-              onTap: (){
+              onTap: () {
                 _index = 3;
                 tapTitle();
               },
-
-
-
-
-              
             ),
-
-
           ],
         )
       ]),
     );
   }
 
-  void tapTitle(){
+  void tapTitle() {
     setState(() {
       _message = 'you tapped $_index';
     });
   }
-
 }
