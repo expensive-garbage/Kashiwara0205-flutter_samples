@@ -26,7 +26,7 @@ import "alert_btn_sample.dart";
 import "simple_dialog_sample.dart";
 import "customize_app_bar.dart";
 import "bottom_navigation_bar.dart";
-
+import "list_view_sample.dart";
 void main() => runApp(const Menu());
 
 class Menu extends StatelessWidget {
@@ -98,6 +98,7 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(
                       const SimpleDialogSample(), "SimpleDialogSample"),
                   createMenuButton(const CustomizeAppBar(), "CustomizeAppBar"),
+                                createMenuButton(const ListViewSample(), "ListViewSample"), 
                   createMenuButton(
                       const BottomuNavigationBar(), "BottomuNavigationBar"),
                   createMenuButton(
