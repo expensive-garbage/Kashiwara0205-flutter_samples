@@ -31,6 +31,7 @@ import "listt_itle_sample.dart";
 import "single_child_scroll_view_sample.dart";
 import "navigator_sample.dart";
 import "pass_value_sample.dart";
+import "tab_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -112,6 +113,7 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(
                       const BottomuNavigationBar(), "BottomuNavigationBar"),
                   createMenuButton(const PassValueSample(), "PassValueSample"),
+                  createMenuButton(const TabSample(), "TabSample"),
                   createMenuButton(
                       const AlertDialogSample(), "AlertDialogSample"),
                 ]))));
