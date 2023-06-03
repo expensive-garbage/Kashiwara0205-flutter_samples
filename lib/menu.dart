@@ -33,6 +33,7 @@ import "navigator_sample.dart";
 import "pass_value_sample.dart";
 import "tab_sample.dart";
 import "bottom_tabs_sample.dart";
+import "drawer_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -116,6 +117,7 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(const PassValueSample(), "PassValueSample"),
                   createMenuButton(const TabSample(), "TabSample"),
                   createMenuButton(const BottomTabSample(), "BottomTabSample"),
+                  createMenuButton(const DrawerSample(), "DrawerSample"),
                   createMenuButton(
                       const AlertDialogSample(), "AlertDialogSample"),
                 ]))));
