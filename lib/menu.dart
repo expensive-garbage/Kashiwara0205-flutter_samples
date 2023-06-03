@@ -30,6 +30,7 @@ import "list_view_sample.dart";
 import "listt_itle_sample.dart";
 import "single_child_scroll_view_sample.dart";
 import "navigator_sample.dart";
+import "pass_value_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -96,7 +97,7 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(
                       const PopupMenuButtonSample(), "PopupMenuButtonSample"),
                   createMenuButton(const RadioBtnSample(), "RadioBtnSample"),
-                  createMenuButton(const NavigatorSample(), "NavigarotSample"), 
+                  createMenuButton(const NavigatorSample(), "NavigarotSample"),
                   createMenuButton(
                       const DropdownBtnSample(), "DropdownBtnSample"),
                   createMenuButton(const SliderSample(), "SliderSample"),
@@ -110,6 +111,7 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(const ListViewSample(), "ListViewSample"),
                   createMenuButton(
                       const BottomuNavigationBar(), "BottomuNavigationBar"),
+                  createMenuButton(const PassValueSample(), "PassValueSample"),
                   createMenuButton(
                       const AlertDialogSample(), "AlertDialogSample"),
                 ]))));

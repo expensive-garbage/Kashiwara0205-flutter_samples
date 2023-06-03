@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const NavigatorSample());
+  runApp(const PassValueSample());
 }
 
-class NavigatorSample extends StatelessWidget {
-  const NavigatorSample({super.key});
+class PassValueSample extends StatelessWidget {
+  const PassValueSample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +13,16 @@ class NavigatorSample extends StatelessWidget {
   }
 }
 
-class FirstScreen extends StatelessWidget {
+class FirstScreen extends StatefulWidget {
   const FirstScreen({super.key});
+
+  @override
+  State<FirstScreen> createState() => _FirstScreen();
+}
+
+class _FirstScreen extends State<FirstScreen> {
+  static final _controller = TextEditingController();
+  static var _input = "";
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +30,18 @@ class FirstScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home'),
       ),
-      body: const Center(
-        child: Text("Home Screen", style: TextStyle(fontSize: 28)),
+      body: Column(
+        children: [
+          const Text("Home Screen", style: TextStyle(fontSize: 28)),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: TextField(
+              controller: _controller,
+              style: const TextStyle(fontSize: 28),
+              onChanged: onChangeField,
+            ),
+          )
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
@@ -36,17 +54,22 @@ class FirstScreen extends StatelessWidget {
         onTap: (int value) => {
           if (value == 1)
             {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const SecondScreen()))
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SecondScreen(value: _input)))
             }
         },
       ),
     );
   }
+
+  void onChangeField(String val) => _input = val;
 }
 
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
+  final String value;
+  const SecondScreen({Key? key, required this.value}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +77,8 @@ class SecondScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Next'),
       ),
-      body: const Center(
-        child: Text("Next Screen", style: TextStyle(fontSize: 28)),
+      body: Center(
+        child: Text(value, style: const TextStyle(fontSize: 28)),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
