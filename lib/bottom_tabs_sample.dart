@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const TabSample());
+  runApp(const BottomTabSample());
 }
 
-class TabSample extends StatelessWidget {
-  const TabSample({super.key});
+class BottomTabSample extends StatelessWidget {
+  const BottomTabSample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const TabSamplePage(title: "base_layout", message: "HelloFlutter!");
+    return const BottomTabSamplePage(
+        title: "base_layout", message: "HelloFlutter!");
   }
 }
 
-class TabSamplePage extends StatefulWidget {
+class BottomTabSamplePage extends StatefulWidget {
   final String title;
   final String message;
 
-  const TabSamplePage({super.key, required this.title, required this.message});
+  const BottomTabSamplePage(
+      {super.key, required this.title, required this.message});
 
   @override
-  State<TabSamplePage> createState() => _TabSamplePageState();
+  State<BottomTabSamplePage> createState() => _BottomTabSamplePageState();
 }
 
-class _TabSamplePageState extends State<TabSamplePage>
+class _BottomTabSamplePageState extends State<BottomTabSamplePage>
     with SingleTickerProviderStateMixin {
   static const List<Tab> tabs = <Tab>[
     Tab(text: "1"),
@@ -44,7 +46,10 @@ class _TabSamplePageState extends State<TabSamplePage>
     return Scaffold(
       appBar: AppBar(
         title: const Text("MyAPP"),
-        bottom: TabBar(controller: _tabController, tabs: tabs),
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.blue,
+        child: TabBar(controller: _tabController, tabs: tabs),
       ),
       body: TabBarView(
           controller: _tabController,
