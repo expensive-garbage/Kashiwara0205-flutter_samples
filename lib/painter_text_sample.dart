@@ -48,7 +48,6 @@ class _PainterTextSamplePageState extends State<PainterTextSamplePage> {
 class MyPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-
     ui.ParagraphBuilder builder =
         ui.ParagraphBuilder(ui.ParagraphStyle(textDirection: TextDirection.ltr))
           ..pushStyle(ui.TextStyle(color: Colors.red, fontSize: 48))
