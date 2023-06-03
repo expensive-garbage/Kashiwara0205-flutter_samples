@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const PainterSample());
+  runApp(const PainterCircleSample());
 }
 
-class PainterSample extends StatelessWidget {
-  const PainterSample({super.key});
+class PainterCircleSample extends StatelessWidget {
+  const PainterCircleSample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const PainterSamplePage();
+    return const PainterCircleSamplePage();
   }
 }
 
@@ -25,14 +25,15 @@ class Data {
   }
 }
 
-class PainterSamplePage extends StatefulWidget {
-  const PainterSamplePage({super.key});
+class PainterCircleSamplePage extends StatefulWidget {
+  const PainterCircleSamplePage({super.key});
 
   @override
-  State<PainterSamplePage> createState() => _PainterSamplePageState();
+  State<PainterCircleSamplePage> createState() =>
+      _PainterCircleSamplePageState();
 }
 
-class _PainterSamplePageState extends State<PainterSamplePage> {
+class _PainterCircleSamplePageState extends State<PainterCircleSamplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,13 +52,17 @@ class MyPainter extends CustomPainter {
 
     p.style = PaintingStyle.fill;
     p.color = Colors.red;
-    Rect r = const Rect.fromLTWH(50, 50, 150, 150);
-    canvas.drawRect(r, p);
+    Offset crt = const Offset(100, 100);
+    canvas.drawCircle(crt, 75, p);
 
     p.style = PaintingStyle.stroke;
     p.color = Colors.blue;
-    r = const Rect.fromLTWH(100, 100, 150, 150);
-    canvas.drawRect(r, p);
+    p.strokeWidth = 10;
+    Rect r = const Rect.fromLTWH(100, 50, 200, 150);
+    canvas.drawOval(r, p);
+
+    r = const Rect.fromLTWH(50, 100, 150, 200);
+    canvas.drawOval(r, p);
   }
 
   @override

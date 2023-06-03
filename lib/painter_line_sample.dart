@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const PainterSample());
+  runApp(const PainterLineSample());
 }
 
-class PainterSample extends StatelessWidget {
-  const PainterSample({super.key});
+class PainterLineSample extends StatelessWidget {
+  const PainterLineSample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const PainterSamplePage();
+    return const PainterLineSamplePage();
   }
 }
 
@@ -25,14 +25,14 @@ class Data {
   }
 }
 
-class PainterSamplePage extends StatefulWidget {
-  const PainterSamplePage({super.key});
+class PainterLineSamplePage extends StatefulWidget {
+  const PainterLineSamplePage({super.key});
 
   @override
-  State<PainterSamplePage> createState() => _PainterSamplePageState();
+  State<PainterLineSamplePage> createState() => _PainterLineSamplePageState();
 }
 
-class _PainterSamplePageState extends State<PainterSamplePage> {
+class _PainterLineSamplePageState extends State<PainterLineSamplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,16 +48,15 @@ class MyPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint p = Paint();
-
-    p.style = PaintingStyle.fill;
-    p.color = Colors.red;
-    Rect r = const Rect.fromLTWH(50, 50, 150, 150);
-    canvas.drawRect(r, p);
-
     p.style = PaintingStyle.stroke;
-    p.color = Colors.blue;
-    r = const Rect.fromLTWH(100, 100, 150, 150);
-    canvas.drawRect(r, p);
+    p.strokeWidth = 5;
+
+    p.color = const Color.fromARGB(150, 0, 200, 255);
+
+    for (var i = 0; i <= 10; i++) {
+      Rect r = Rect.fromLTRB(50.0 + 20 * i, 50, 50, 250.0 - 20 * i);
+      canvas.drawLine(r.topLeft, r.bottomRight, p);
+    }
   }
 
   @override
