@@ -39,6 +39,7 @@ import "painter_circle_sample.dart";
 import "painter_line_sample.dart";
 import "painter_text_sample.dart";
 import "painter_image_sample.dart";
+import "painter_path_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -128,6 +129,7 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(
                       const PainterLineSample(), "PainterLineSample"),
                   createMenuButton(const PainterSample(), "PainterSample"),
+                  createMenuButton(const PainterPathSample(), "PainterPathSample"),
                   createMenuButton(
                       const PainterImageSample(), "PainterImageSample"),
                   createMenuButton(
