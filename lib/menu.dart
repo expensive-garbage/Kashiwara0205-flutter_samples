@@ -45,6 +45,7 @@ import "painter_click_sample.dart";
 import "painter_ui_widget_sample.dart";
 import "painter_value_notifer_sample.dart";
 import "animation_sample.dart";
+import "animation_left_to_right_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -149,6 +150,7 @@ class _MenuPageState extends State<MenuPage> {
                   createMenuButton(
                       const PainterUiWidgetSample(), "PainterUiWidgetSample"),
                   createMenuButton(const AnimationSample(), "AnimationSample"),
+                  createMenuButton(const AnimationLeftToRightSample(), "AnimationLeftToRightSample"),
                   createMenuButton(
                       const AlertDialogSample(), "AlertDialogSample"),
                 ]))));
