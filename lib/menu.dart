@@ -43,6 +43,7 @@ import "painter_path_sample.dart";
 import "painter_translate_sample.dart";
 import "painter_click_sample.dart";
 import "painter_ui_widget_sample.dart";
+import "painter_value_notifer_sample.dart";
 
 void main() => runApp(const Menu());
 
@@ -138,6 +139,8 @@ class _MenuPageState extends State<MenuPage> {
                       const PainterPathSample(), "PainterPathSample"),
                   createMenuButton(
                       const PainterTranslateSample(), "PainterTranslateSample"),
+                  createMenuButton(const PainterValueNotifierSample(),
+                      "PainterValueNotifierSample"),
                   createMenuButton(
                       const PainterImageSample(), "PainterImageSample"),
                   createMenuButton(
